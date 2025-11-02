@@ -35,14 +35,14 @@
     const mode = parseInt(urlParams.get('mode')) || 0;
 
     const viewer = new GaussianSplats3D.Viewer({
-        'cameraUp': [0, -1, -1.0],
-        'initialCameraPosition': [-3.3816, 1.96931, -1.71890],
-        'initialCameraLookAt': [-0.04979, 1.37519, 1.13443],
+        'cameraUp': [-0.01098, -0.99992, 0.00608],
+        'initialCameraPosition': [0.70143, -0.16927, -0.77927],
+        'initialCameraLookAt': [-0.03648, -0.22221, 0.00352],
         'sphericalHarmonicsDegree': 2
     });
-    let path = 'assets/data/stump/stump' + (mode ? '_high' : '') + '.ksplat';
+    let path = 'assets/data/dodge_challenger/dodge_challenger' + (mode ? '' : '') + '.ply';
     viewer.addSplatScene(path, {
-      'progressiveLoad': false
+      'progressiveLoad': true
     })
     .then(() => {
         viewer.start();
